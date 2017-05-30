@@ -2,10 +2,14 @@ class WahserQueueJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    # Do something later
+	# Do something later
+	num = 4#default num of washer machine
+	puts "Hello"
 	@user_on_use = User.where(:book_flag => true)
-	if @user_on_use.count < 4
-		@user_unuse = User.where(:book_flag => false).take(4-@userA_on_use.count)
+	puts @user_on_use.class
+	n = @user_on_use.count
+	if n < num
+		@user_unuse = User.where(:book_flag => false).take(4- @user_on_use.count())
 		for user in @user_unuse
 			user.book_flag = true
 			user.save
