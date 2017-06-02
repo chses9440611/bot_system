@@ -59,6 +59,7 @@ class UsersController < ApplicationController
 			user.check_flag = false
 			user.start_flag = false
 			user.finished_flag = false
+			user.card_id = Student.find_by(:student_id => user.student_id).card_id
 		end
 
 end

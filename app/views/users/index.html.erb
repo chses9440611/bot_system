@@ -7,6 +7,13 @@
 		<tr>
 			<th>Name</th>
 			<th>Student ID</th>
+			<th>Book Wait Time</th>
+			<th>Start Wait Time</th>
+			<th>Start Time</th>
+			<th>End Time</th>
+			<th>Book Flag</th>
+			<th>Check Flag</th>
+			<th>Start Flag</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -16,6 +23,13 @@
 			<tr>
 				<td><%= user.name%></td>
 				<td><%= user.student_id %></td>
+				<td><%= user.book_wait_time.to_s%></td>
+				<td><%= user.start_wait_time.to_s%></td>
+				<td><%= user.start_time.to_s%></td>
+				<td><%= user.end_time.to_s%></td>
+				<td><%= user.book_flag%></td>
+				<td><%= user.check_flag%></td>
+				<td><%= user.start_flag%></td>
 				<td><%= link_to 'Cancel', user, method: :delete, data:{ confirm: "Are you sure to cancel?"} %></td>
 			</tr>
 		<% end %>
